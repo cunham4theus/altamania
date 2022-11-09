@@ -1,0 +1,61 @@
+@use 'variaveis' as *;
+@use 'mixin' as *;
+
+.home {
+  background-color: $color-terciary;
+  display: flex;
+  @include container-size;
+  padding: 0;
+
+  .home__left {
+    display: flex;
+    padding-bottom: 10rem;
+    width: 50%;
+    justify-content: end;
+    align-items: flex-end;
+  }
+
+  .home__container {
+    background-color: $color-primary;
+    width: 70%;
+    display: flex;
+    position: relative;
+
+    &__img-primary {
+      padding: 0;
+
+      img {        
+        object-fit: cover;
+        max-width: 100%;
+        object-position: right;
+      }
+    }
+
+    h1 {
+      display: flex;
+      flex-direction: column;
+
+      span:first-child {
+        position: absolute;
+        left: -53rem;
+        top: 10rem;
+      }
+      span:nth-child(2) {
+        position: absolute;
+        left: -40rem;
+        top: 12rem;
+      }
+      span:nth-child(3) {
+        position: absolute;
+        left: -32rem;
+        top: 22rem;
+      }
+    }
+    .home__img-secondary {
+      position: absolute;
+      bottom: -15rem;
+      left: -15rem;
+      width: clamp(10rem, 30vw, 30rem);
+    }
+  }
+}

@@ -1,0 +1,109 @@
+@use 'variaveis' as *;
+@use 'mixin' as *;
+@use 'components' as *;
+
+.services {
+  display: grid;
+  gap: 6rem;
+  background-color: $color-secondary;
+  padding: 10rem 5rem;
+  @include container-size;
+  
+
+  &__description {
+    display: grid;
+    gap: 2rem;
+  }
+
+  &__portfolio {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+
+    .portfolio__card {
+      max-width: 35rem;
+      height: 50rem;
+      display: grid;
+      gap: 2rem;
+      border: 1px solid $color-terciary;
+      box-shadow: 1px 1px 5px $color-terciary;
+      color: $color-terciary;
+      transition: all ease 0.3s;
+      position: relative;
+
+      &:hover {
+        background-color: $color-terciary;
+        color: $color-secondary;
+      }
+
+      &-list {
+        display: grid;
+        gap: 0.2rem;
+
+        li {
+          list-style: disc;
+          margin-left: 4rem;
+        }
+      }
+
+      &-btn {
+        place-self: center;
+        padding-bottom: 1rem;
+
+        .btn-black--2 {
+          padding-right: 2rem;
+        }
+      }
+    }
+    .portfolio__card:nth-child(1) {
+      &::before {
+        content: '';
+        width: 10rem;
+        height: .5rem;
+        display: block;
+        bottom: -6rem;
+        right: -9.5rem;
+        color: $color-terciary;
+        background-color: $color-terciary;
+        position: absolute;
+      }
+    }
+
+    .portfolio__card:nth-child(2) {
+      &::before {
+        content: '';
+        width: 10rem;
+        height: .5rem;
+        display: block;
+        bottom: -6rem;
+        right: 12rem;
+        background-color: $color-terciary;
+        position: absolute;
+      }
+    }
+
+    .portfolio__card:nth-child(3) {
+      &::before {
+        content: '';
+        width: 10rem;
+        height: .5rem;
+        display: block;
+        bottom: -6rem;
+        left: -9rem;
+        color: $color-terciary;
+        background-color: $color-terciary;
+        position: absolute;
+      }
+    }
+    .portfolio__card:hover::before {
+      background-color: $color-primary;
+    }
+    .portfolio__card:hover .btn-black--2 {
+      color: $color-secondary;
+      border: 1px solid darken($color-secondary, 10%);
+    }
+    .btn-black--2:hover {
+      border: none !important;
+    }
+  }
+}

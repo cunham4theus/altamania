@@ -1,0 +1,28 @@
+@use 'variaveis' as *;
+@use 'mixin' as *;
+
+.about {
+  background-color: $color-secondary;
+  padding-top: 22rem;
+  padding-inline: 4rem;
+  @include container-size;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  padding-bottom: 12rem;
+
+  &__description-text {
+    grid-column: 1/-1;
+    margin-bottom: 10rem;
+  }
+
+  &__description-shorts {
+    display: grid;
+    place-items: center;
+
+    p {
+      max-width: 25ch;
+      margin-top: -6rem;
+    }
+  }
+}

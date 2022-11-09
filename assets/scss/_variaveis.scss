@@ -1,0 +1,38 @@
+//color
+
+$color-primary: #bc0014;
+$color-secondary: #eee;
+$color-terciary: #121111;
+
+.color-primary {
+  color: $color-primary;
+}
+.color-secondary {
+  color: $color-secondary;
+}
+.color-terciary {
+  color: $color-terciary;
+}
+
+//font
+.defaut-font-primary {
+  font: 400 3.6rem/1 'Roboto', sans-serif;
+}
+.defaut-font-secondary {
+  font: 700 9.6rem/1 'Inter', sans-serif;
+}
+.menu-font-primary {
+  font: 600 2rem/1 'Inter', sans-serif;
+  text-transform: uppercase;
+}
+.menu-font-secondary {
+  font: 500 2rem/1.5 'Inter', sans-serif;
+}
+.title-font-primary {
+  font: 600 6.4rem/1 'Inter', sans-serif;
+  text-transform: uppercase;
+}
+.title-font-secondary {
+  font: 500 12.8rem/1.5 'Inter', sans-serif;
+  text-transform: uppercase;
+}

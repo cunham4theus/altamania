@@ -1,0 +1,87 @@
+@use 'variaveis' as *;
+@use 'mixin' as *;
+@use 'components' as *;
+
+.footer {
+  padding-top: 12rem;
+  display: grid;
+  gap: 6rem;
+  @include container-size;
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+
+    &__contacts {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 6rem;
+      place-items: center;
+
+      &-web {
+        display: flex;
+        gap: 1.6rem;
+        font-size: 2.8rem;
+
+        a {
+          color: $color-secondary;
+
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+
+    &-copy {
+      max-width: 60ch;
+      spam {
+        display: block;
+        font-size: 1.8rem;
+        color: darken($color-secondary, 10%);
+        font-weight: 200;
+      }
+    }
+
+    &__we-do {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 6rem;
+
+      a {
+        color: $color-secondary;
+        display: block;
+      }
+
+      li {
+        color: darken($color-secondary, 5%);
+        font-weight: 200;
+
+        &:hover::first-letter {
+          color: $color-primary;
+        }
+      }
+    }
+
+    &__agency {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 6rem;
+
+      a {
+        display: block;
+        color: $color-secondary;
+      }
+
+      li {
+        color: darken($color-secondary, 5%);
+        font-weight: 200;
+
+        &:hover::first-letter {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}

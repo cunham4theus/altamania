@@ -1,0 +1,139 @@
+@use 'variaveis' as *;
+@use 'mixin' as *;
+@use 'components' as *;
+
+.customers {
+  display: grid;
+  position: relative;
+  overflow: hidden;
+  @include container-size;
+
+  &__spam--1 {
+    width: 150rem;
+    font-size: 3rem;
+    top: 5rem;
+    text-align: left;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    left: -1rem;
+  }
+
+  &__spam--2 {
+    width: 150rem;
+    font-size: 2rem;
+    text-align: left;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 15rem;
+    left: -1rem;
+  }
+
+  &__logos {
+    padding-top: 30rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+    @include container-size;
+    margin-bottom: 12rem;
+
+    &__card {
+      width: 25rem;
+      height: 25rem;
+      background-color: $color-secondary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        object-fit: cover;
+        width: 80%;
+        z-index: 999;
+      }
+
+      &:hover {
+        background-color: $color-primary;
+        border: 1px solid darken($color-secondary, 30%);
+      }
+    }
+    &__card:nth-child(1) {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4rem;
+        background-color: $color-terciary;
+        bottom: 3rem;
+        left: 0;
+        display: block;
+        filter: opacity(1);
+      }
+
+      &::before {
+        content: '';
+        width: 8rem;
+        height: 0.5rem;
+        display: block;
+        bottom: -6rem;
+        right: -18rem;
+        color: $color-terciary;
+        background-color: $color-secondary;
+        position: absolute;
+      }
+    }
+
+    &__card:nth-child(2) {
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 8rem;
+        height: 0.5rem;
+        display: block;
+        bottom: -6rem;
+        right: 0rem;
+        color: $color-terciary;
+        background-color: $color-secondary;
+        position: absolute;
+      }
+    }
+
+    &__card:nth-child(3) {
+      position: relative;
+      
+      &::before {
+        content: '';
+        width:8rem;
+        height: 0.5rem;
+        display: block;
+        bottom: -6rem;
+        left: 0rem;
+        color: $color-terciary;
+        background-color: $color-secondary;
+        position: absolute;
+      }
+    }
+
+    &__card:nth-child(4) {
+      position: relative;
+      
+      &::before {
+        content: '';
+        width: 8rem;
+        height: 0.5rem;
+        display: block;
+        bottom: -6rem;
+        left: -18rem;
+        color: $color-terciary;
+        background-color: $color-secondary;
+        position: absolute;
+      }
+    }
+  }
+  .customers__logos__card:hover::before {
+    background-color: $color-primary;
+  }
+}
