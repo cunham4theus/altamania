@@ -1,4 +1,4 @@
-@use "variaveis" as *;
+@use 'variables' as *;
 
 * {
   margin: 0;
@@ -8,6 +8,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {

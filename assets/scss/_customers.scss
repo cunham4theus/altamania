@@ -1,4 +1,4 @@
-@use 'variaveis' as *;
+@use 'variables' as *;
 @use 'mixin' as *;
 @use 'components' as *;
 
@@ -45,6 +45,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
 
       img {
         object-fit: cover;
@@ -103,10 +104,10 @@
 
     &__card:nth-child(3) {
       position: relative;
-      
+
       &::before {
         content: '';
-        width:8rem;
+        width: 8rem;
         height: 0.5rem;
         display: block;
         bottom: -6rem;
@@ -119,7 +120,7 @@
 
     &__card:nth-child(4) {
       position: relative;
-      
+
       &::before {
         content: '';
         width: 8rem;

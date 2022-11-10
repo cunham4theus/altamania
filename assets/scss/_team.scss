@@ -1,4 +1,4 @@
-@use 'variaveis' as *;
+@use 'variables' as *;
 @use 'mixin' as *;
 
 .team {
@@ -9,7 +9,7 @@
   padding-bottom: 12rem;
   align-items: center;
 
-  &__title {    
+  &__title {
     h2 {
       margin-bottom: 5rem;
     }
@@ -18,7 +18,7 @@
   &__services {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    place-items: space-betwen;  
+    place-items: space-betwen;
     gap: 4rem;
 
     li {
@@ -27,7 +27,7 @@
       display: flex;
       justify-content: space-between;
       max-width: 40rem;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
 
       &:hover {
         border: 1px solid $color-primary;
