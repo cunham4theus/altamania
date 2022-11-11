@@ -6,20 +6,34 @@
   display: flex;
   @include container-size;
   padding: 0;
+  position: relative;
 
-  .home__left {
-    display: flex;
-    padding-bottom: 10rem;
-    width: 50%;
-    justify-content: end;
-    align-items: flex-end;
+  &__left {
+    display: none;
+    @include respond(phone) {
+      display: flex;
+      padding-bottom: 10rem;
+      width: 50%;
+      justify-content: end;
+      align-items: flex-end;
+    }
+
+    &__btn {
+      display: none;
+      @include respond(phone) {
+        display: block;
+      }
+    }
   }
 
   .home__container {
-    background-color: $color-primary;
-    width: 70%;
-    display: flex;
-    position: relative;
+    width: 100%;
+    @include respond(phone) {
+      background-color: $color-primary;
+      width: 70%;
+      display: flex;
+      position: relative;
+    }
 
     &__img-primary {
       padding: 0;
@@ -37,25 +51,107 @@
 
       span:first-child {
         position: absolute;
-        left: -53rem;
+        left: 2rem;
         top: 10rem;
+        font-weight: 600;
+
+        @include respond(phone) {
+          left: -37rem;
+          top: 10rem;
+        }
+
+        @include respond(btn-broken) {
+          left: -38.5rem;
+          top: 11rem;
+        }
+
+        @include respond(tab-port) {
+          left: -44.5rem;
+          top: 10rem;
+        }
+
+        @include respond(tab-land) {
+          left: -53rem;
+          top: 10rem;
+        }
       }
+
       span:nth-child(2) {
         position: absolute;
-        left: -40rem;
-        top: 12rem;
+        color: $color-terciary;
+        font-weight: 600;
+        left: 2rem;
+        top: 11rem;
+
+        @include respond(phone) {
+          color: $color-primary;
+          left: -28rem;
+          top: 13.5rem;
+        }
+
+        @include respond(btn-broken) {
+          left: -31.5rem;
+          top: 15rem;
+        }
+
+        @include respond(tab-port) {
+          left: -34.5rem;
+          top: 15rem;
+        }
+
+        @include respond(tab-land) {
+          left: -41rem;
+          top: 15rem;
+        }
       }
       span:nth-child(3) {
+        font-weight: 600;
         position: absolute;
-        left: -32rem;
-        top: 22rem;
+        left: 2rem;
+        top: 18rem;
+
+        @include respond(phone) {
+          left: -22rem;
+          top: 21rem;
+        }
+        @include respond(btn-broken) {
+          left: -25rem;
+          top: 23rem;
+        }
+        @include respond(tab-port) {
+          left: -27.5rem;
+          top: 24rem;
+        }
+
+        @include respond(tab-land) {
+          left: -32rem;
+          top: 26rem;
+        }
       }
     }
+
     .home__img-secondary {
-      position: absolute;
-      bottom: -15rem;
-      left: -15rem;
-      width: clamp(10rem, 30vw, 30rem);
+      display: none;
+      @include respond(phone) {
+        position: absolute;
+        width: 30rem;
+
+        @include respond(btn-broken) {
+          display: block;
+          bottom: -20rem;
+          left: -15rem;
+        }
+
+        @include respond(tab-port) {
+          left: -14.5rem;
+          top: 36rem;
+        }
+
+        @include respond(tab-land) {
+          left: -14.5rem;
+          top: 40rem;
+        }
+      }
     }
   }
 }

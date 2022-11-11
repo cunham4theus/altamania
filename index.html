@@ -17,22 +17,39 @@
 </head>
 
 <body>
-  <header class="header" id="home">
-    <div class="header__logo">
+
+  <header class="navigation id="home"">
+
+    <div class="navigation__logo">
       <img src="assets/img/ALTA MANIA.svg" alt="">
-    </div>
-    <nav class="header__menu menu-font-primary color-secondary">
-      <ul class="menu__items">
-        <li><a href="#home">home</a> </li>
-        <li><a href="#about">chi samo</a></li>
-        <li><a href="#team">models</a></li>
-        <li><a href="#services">servizi</a></li>
-        <li><a href="#customers">lavora con noi</a></li>
-        <li><a href="https://www.linkedin.com/in/cunham4theus/" target="_blank">blog</a></li>
-        <li><a href="#contacts">contatti</a></li>
+    </div> 
+
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+    <label for="navi-toggle" class="navigation__button">
+      <span class="navigation__icon">&nbsp;</span>
+    </label>
+
+    <div class="navigation__background">&nbsp;</div> 
+
+   
+
+    <nav class="navigation__nav">
+      <ul class="navigation__list">
+        <li class="navigation__list__item"><a class="menu-font-primary color-secondary navigation__link" href="#home">home</a> </li>
+        <li class="navigation__list__item"><a class="menu-font-primary color-secondary navigation__link" href="#about">chi samo</a></li>
+        <li class="navigation__list__item"><a class="menu-font-primary color-secondary navigation__link" href="#team">models</a></li>
+        <li class="navigation__list__item"><a class="menu-font-primary color-secondary navigation__link" href="#services">servizi</a></li>
+        <li class="navigation__list__item"><a class="menu-font-primary color-secondary navigation__link" href="#customers">lavora con noi</a></li>
+        <li class="navigation__list__item"><a class="menu-font-primary color-secondary navigation__link" href="https://www.linkedin.com/in/cunham4theus/" target="_blank">blog</a></li>
+        <li class="navigation__list__item"><a class="menu-font-primary color-secondary navigation__link" href="#contacts">contatti</a></li>
       </ul>
+      <div class="navigation__nav__logo">
+        <img src="assets/img/ALTA MANIA.svg" alt="">
+      </div> 
     </nav>
   </header>
+
+ 
 
   <main>
     <section class="home">
@@ -43,7 +60,7 @@
       </div>
       <div class="home__container">
         <div class="home__container__img-primary">
-          <img  src="/assets/img/FinSmall-4-3 1.jpg" alt="">
+          <img src="/assets/img/FinSmall-4-3 1.jpg" alt="">
         </div>
         <h1>
           <span class="title-font-primary color-secondary">we are</span>
@@ -153,7 +170,7 @@
         </a>
         <a href="https://www.dolcegabbana.com/en/" target="_blank" class="customers__logos__card">
           <img src="/assets/img/pngegg.svg" alt="">
-        </a >
+        </a>
         <a href="https://www.volvopenta.com/" target="_blank" class="customers__logos__card">
           <img src="/assets/img/PngItem_2719198 1.svg" alt="">
         </a>
@@ -218,8 +235,20 @@
         </div>
 
       </div>
-    </footer>
+    </footer>    
   </main>
+  <script >
+    let checkbox = document.getElementById("navi-toggle");
+    let links = document.querySelectorAll('.navigation__list__item');
+  
+    console.log(checkbox, links)
+  
+    links.forEach(element => {
+      element.addEventListener("click", () => {
+        checkbox.checked = false;
+      })
+    });
+    </script>
 </body>
 
 </html>

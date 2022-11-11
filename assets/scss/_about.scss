@@ -3,26 +3,56 @@
 
 .about {
   background-color: $color-secondary;
-  padding-top: 22rem;
-  padding-inline: 4rem;
   @include container-size;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  
   gap: 4rem;
   padding-bottom: 12rem;
+  padding-top: 12rem;
+
+  @include respond(phone) {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  @include respond(btn-broken) {
+    padding-top: 22rem;
+    padding-inline: 4rem;
+    padding-bottom: 12rem;
+    
+  }
 
   &__description-text {
     grid-column: 1/-1;
     margin-bottom: 10rem;
   }
 
+
+
   &__description-shorts {
     display: grid;
     place-items: center;
+    @include respond(phone) {
+      
+    }
+
+    img {
+      display: none;
+
+      @include respond(tab-port) {
+        display: block;
+      }
+    }
 
     p {
+      display: none;
       max-width: 25ch;
-      margin-top: -6rem;
+      margin-top: -3rem;
+
+      @include respond(tab-port) {
+        display: block;
+      }
+
+      
     }
   }
 }

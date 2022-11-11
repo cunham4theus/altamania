@@ -5,19 +5,31 @@
 .footer {
   padding-top: 12rem;
   display: grid;
-  gap: 6rem;
+  gap:10rem;
   @include container-size;
 
   &__links {
-    display: flex;
-    justify-content: space-between;
-    gap: 6rem;
+    display: grid;  
+    grid-template-columns: 1fr 1fr;  
+    gap: 1rem;
+    justify-items: center;
+
+    @include respond(phone) {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6rem;
+    }
 
     &__contacts {
       display: grid;
       gap: 2rem;
       margin-bottom: 6rem;
       place-items: center;
+      grid-column: 1/-1;
+      grid-row: 2;     
+      @include respond(phone) {
+        grid-column: auto;
+        grid-row: auto;
+      }
 
       &-web {
         display: flex;

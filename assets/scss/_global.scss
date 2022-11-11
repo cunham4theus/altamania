@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use "mixin" as *;
 
 * {
   margin: 0;
@@ -7,13 +8,29 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 37.5%;
   scroll-behavior: smooth;
+    
+  @include respond(btn-broken) {
+    font-size: 47.5%;
+  }
+  
+  @include respond(tab-port) {
+    font-size: 56.2%;
+  }
+
+  @include respond(desktop) {
+    font-size: 62.5%;
+  }
+
+ 
 }
 
 body {
   min-height: 100vh;
   background-color: $color-terciary;
+  overflow-x: hidden;
+ 
 }
 
 img {

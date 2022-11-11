@@ -6,22 +6,37 @@
   font-weight: 100;
   border: 1px solid darken($color-secondary, 10%);
   padding: 2rem 5rem;
-  padding-right: 15rem;
-  margin-right: 18rem;
+  padding-right: 4rem;
+  margin-right: 4rem;
   align-self: end;
   position: relative;
   transition: all ease 0.3s;
 
-  &::after {
-    content: '';
-    display: block;
-    background-image: url('/assets/img/Arrow\ 1.svg');
-    top: 45%;
-    right: 15%;
-    width: 7.5rem;
-    height: 1rem;
-    position: absolute;
-    color: $color-primary;
+  @include respond(phone) {   
+    padding: 2rem 5rem;
+    padding-right: 4rem;
+    margin-right: 18rem;
+    align-self: end;
+    position: relative;
+    transition: all ease 0.3s;
+  }
+
+  @include respond(tab-port) {
+    padding-right: 10rem;
+    &::after {
+      content: '';
+      display: block;
+      background-image: url('/assets/img/Arrow\ 1.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      top: 45%;
+      right: 10%;
+      width: 6rem;
+      height: 1rem;
+      position: absolute;
+      color: $color-primary;
+    }
   }
 
   &::before {
@@ -51,21 +66,32 @@
   font-weight: 100;
   border: 1px solid darken($color-terciary, 10%);
   padding: 1.5rem;
-  padding-right: 10rem;
+
   align-self: end;
   position: relative;
   transition: all ease 0.3s;
 
+  @include respond(btn-broken) {
+    padding-right: 10rem;
+  }
+
   &::after {
-    content: '';
-    display: block;
-    background-image: url('/assets/img/Arrow\ 2.svg');
-    top: 45%;
-    right: 15%;
-    width: 4.5rem;
-    height: 1rem;
-    position: absolute;
-    color: $color-terciary;
+    display: none;
+
+    @include respond(btn-broken) {
+      content: '';
+      display: block;
+      background-image: url('/assets/img/Arrow\ 2.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      top: 45%;
+      right: 15%;
+      width: 6rem;
+      height: 1rem;
+      position: absolute;
+      color: $color-terciary;
+    }
   }
 
   &::before {
